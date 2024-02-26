@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "public/dist",
+    "lib": ["ES2017", "DOM"], // Configuração para conseguir usar o medoto de arrays FIND
+    "target": "ES5"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro da lida dos astronautas</h1>
+    <form>
+        <div>
+            Nome:  <input type="text" name="firstname" >
+        </div>
+        <br>
+        <div>
+            Email: <input type="email" name="email" >
+            - Password: <input type="password" name="password" >
+        </div>
+        <br>
+
+        <div>
+            Data de nascimento: <input type="date" name="nascimento">
+            -Foto: <input type="file" name="perfil" placeholder="Escolher arquivo">
+        </div>
+        <br>
+
+        <div>
+            Nacionalidade: <input list="paises">
+            <datalist id="paises">
+              <option value="Russo">
+              <option value="Americano">
+              <option value="Brasileiro">
+            </datalist>
+            -Genero 
+            <input type="radio" name="gender">Male 
+            <input type="radio" name="gender"> Female
+        </div>
+        <br>
+
+        <div>
+            Suas Principais habilidades: <br>
+            <input type="checkbox" name="habilidades"> Inteligencia |
+            <input type="checkbox" name="habilidades"> Resiliencia |
+            <input type="checkbox" name="habilidades"> Preparo fisico |
+            <input type="checkbox" name="habilidades"> Educacao
+        </div>
+        <br>
+
+        <div>
+            <textarea name="description" id="descripition" cols="30" rows="10" placeholder="porque voce gostaria de ser astronauta?"></textarea>
+        </div>
+        <div>
+            <input type="submit" placeholder="criar">
+        </div>
+    </form>
+</body>
+</html>

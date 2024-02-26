@@ -1,0 +1,17 @@
+/* seleciona todos os elementos do html */
+/* *{
+    border: 2px solid;
+} */
+/* seletor de pai para filho ( use "> ou < pra indicar a descendencia especifica que deseja usar ) */
+li a{
+    color:red;
+}
+
+/* Seletor adjacente: um depois do outro */
+h1 + h4{
+    border: 4px dashed;
+}
+
+a[href='/recibo'] {
+    color: orange;
+}
