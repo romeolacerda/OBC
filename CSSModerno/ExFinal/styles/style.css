@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+.header {
+  height: 100px;
+  background-color: rgb(51, 51, 51);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.headerBar {
+  padding: 30px 30px;
+}
+.headerOptions {
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+}
+.headerOptions:hover {
+  border-bottom: solid 3px black;
+  transition-duration: 0.5s;
+}
+#logo-obc {
+  height: 100px;
+  width: 200px;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+/* title */
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.titleTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  color: rgb(23, 23, 23);
+}
+.titleSubtitle {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 22px;
+  color: rgb(30, 30, 30);
+}
+img {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.content {
+  padding-left: 200px;
+  float: left;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 10px 10px;
+}
+p {
+  height: 100px;
+  width: 200px;
+}
+/* sideBar */
+.sideBar {
+  margin-left: auto;
+  width: 350px;
+  background-color: darkgray;
+}
