@@ -1,14 +1,12 @@
-const element = <h1>Olá Mundo</h1>;
+function PrimaryButton() {
+  return <button>Meu Botão</button>;
+}
 
-const aelement = (
-  <div>
-    <h1>Texto</h1>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-);
+function Container() {
+  return (
+    <div className="">
+      <h1></h1>
+      <p></p>
+    </div>
+  );
+}
