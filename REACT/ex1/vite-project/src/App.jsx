@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
+    <div className="app">
+      <img src="/react.png" alt="Log do React" />
+      <h1>React</h1>
+      <p>Biblioteca para interfaces de usuarios web nativas</p>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <button>Aprenda React</button>
+        <button>Referencia da api</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <hr />
+      <h2>Crie interfaces de usuarios de componentes</h2>
+      <p>
+        React permite que você contrua interfaces de usuarios apartir de
+        componentes
       </p>
-    </>
-  )
+      <hr />
+      <h2>Escreva componentes com codigo e marcação</h2>
+      <p>Componentes do recat são funções javascript</p>
+      <h2>Proximos passos</h2>
+      <ul>
+        <li>Uso de dados dinamicos do jsx</li>
+        <li>Criação de novos componemtes</li>
+        <li>Estilização de componemtes</li>
+        <li>Reutilização de componemtes</li>
+        <li>Uso de props e children</li>
+        <li>USo de eventos no javascript</li>
+      </ul>
+    </div>
+  );
 }
-
-export default App
