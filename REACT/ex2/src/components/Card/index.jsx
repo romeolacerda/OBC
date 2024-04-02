@@ -1,12 +1,12 @@
-import posterImg from "../../assets/swposter.jpg";
 import styles from "./styles.module.css";
+import Button from "../Button";
 
-export default function Card() {
+export default function Card(props) {
   return (
     <div className={styles.container}>
-      <img className={styles.poster} src={posterImg} alt="Star Wars poster" />
+      <img className={styles.poster} src={props.posterImg} alt={props.title} />
       <div>
-        <h2>Poster do Filme Star Wars</h2>
+        <h2>{props.title}</h2>
         <p>
           Um pôster decorativo épico do filme Star Wars, com moldura de MDF e
           tamanho A3. Uma ótima recordação de um dos mais icônicos filmes de
@@ -14,7 +14,7 @@ export default function Card() {
           magia de Star Wars para qualquer lugar que você decidir pendurar. Não
           perca a chance de adicionar essa linda memória ao seu acervo!
         </p>
-        <button>Compar Agora</button>
+        <Button text="Comprar agora" />
       </div>
     </div>
   );
