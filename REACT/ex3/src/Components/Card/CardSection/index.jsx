@@ -1,5 +1,9 @@
 import styles from "./styles.module.css";
 
-export default function CardSection(porps) {
-  return <div className={styles.wrapper}>{porps.children}</div>;
+export default function CardSection(props) {
+  return (
+    <div {...props} className={`${styles.wrapper} ${props.className}`}>
+      {props.children}
+    </div>
+  );
 }

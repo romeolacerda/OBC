@@ -14,18 +14,21 @@ export default function Card(props) {
       <CardSection>{props.bio}</CardSection>
       <CardSection>{props.phone}</CardSection>
       <CardSection>{props.email}</CardSection>
-      <CardSection>
-        <div className={styles.links}>
-          <LinkButton href={props.githubUrl} target="_blank">
-            GituHub
-          </LinkButton>
-          <LinkButton href={props.linkedinUrl} target="_blank">
-            Linkedin
-          </LinkButton>
-          <LinkButton href={props.twitterUrl} target="_blank">
-            Twiter
-          </LinkButton>
-        </div>
+      <CardSection
+        className={styles.links}
+        id="links-section"
+        data-test="some value"
+        arial-label="social links"
+      >
+        <LinkButton href={props.githubUrl} target="_blank">
+          GituHub
+        </LinkButton>
+        <LinkButton href={props.linkedinUrl} target="_blank">
+          Linkedin
+        </LinkButton>
+        <LinkButton href={props.twitterUrl} target="_blank">
+          Twiter
+        </LinkButton>
       </CardSection>
     </div>
   );
