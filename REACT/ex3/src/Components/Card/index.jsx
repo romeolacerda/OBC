@@ -1,4 +1,6 @@
+import LinkButton from "../LinkButton";
 import Title from "../Title";
+import CardSection from "./CardSection";
 import styles from "./styles.module.css";
 
 export default function Card(props) {
@@ -9,20 +11,22 @@ export default function Card(props) {
         <span>{props.name}</span>
         <button>Follow</button>
       </Title>
-      <div>{props.bio}</div>
-      <div>{props.phone}</div>
-      <div>{props.email}</div>
-      <div className={styles.links}>
-        <a href={props.githubUrl} target="_blank">
-          GituHub
-        </a>
-        <a href={props.linkedinUrl} target="_blank">
-          Linkedin
-        </a>
-        <a href={props.twitterUrl} target="_blank">
-          Twiter
-        </a>
-      </div>
+      <CardSection>{props.bio}</CardSection>
+      <CardSection>{props.phone}</CardSection>
+      <CardSection>{props.email}</CardSection>
+      <CardSection>
+        <div className={styles.links}>
+          <LinkButton href={props.githubUrl} target="_blank">
+            GituHub
+          </LinkButton>
+          <LinkButton href={props.linkedinUrl} target="_blank">
+            Linkedin
+          </LinkButton>
+          <LinkButton href={props.twitterUrl} target="_blank">
+            Twiter
+          </LinkButton>
+        </div>
+      </CardSection>
     </div>
   );
 }
