@@ -1,10 +1,14 @@
+import Title from "../Title";
 import styles from "./styles.module.css";
 
 export default function Card(props) {
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
-      <h3 className={styles.name}> {props.name}</h3>
+      <Title>
+        <span>{props.name}</span>
+        <button>Follow</button>
+      </Title>
       <div>{props.bio}</div>
       <div>{props.phone}</div>
       <div>{props.email}</div>
