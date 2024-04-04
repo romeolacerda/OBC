@@ -3,13 +3,20 @@ import Title from "../Title";
 import CardSection from "./CardSection";
 import styles from "./styles.module.css";
 
+function handleClick(ev) {
+  console.log(ev);
+  alert("Você agor esta seguindo!");
+}
+
 export default function Card(props) {
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
       <Title>
         <span>{props.name}</span>
-        <button>Follow</button>
+        <button className={styles.followButton} onClick={handleClick}>
+          Follow
+        </button>
       </Title>
       <CardSection>{props.bio}</CardSection>
       <CardSection>{props.phone}</CardSection>
