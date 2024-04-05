@@ -9,13 +9,14 @@ function handleClick(ev) {
 }
 
 export default function Card(props) {
+  let followButtonText = "Follow";
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
       <Title>
         <span>{props.name}</span>
         <button className={styles.followButton} onClick={handleClick}>
-          Follow
+          {followButtonText}
         </button>
       </Title>
       <CardSection>{props.bio}</CardSection>
