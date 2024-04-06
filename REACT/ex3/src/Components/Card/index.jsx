@@ -1,22 +1,24 @@
+import { useState } from "react";
 import LinkButton from "../LinkButton";
 import Title from "../Title";
 import CardSection from "./CardSection";
 import styles from "./styles.module.css";
 
-function handleClick(ev) {
-  console.log(ev);
-  alert("Você agor esta seguindo!");
-}
-
 export default function Card(props) {
-  let followButtonText = "Follow";
+  const [followText, setFollowText] = useState("Follow");
+
+  function handleClick(ev) {
+    alert("Você esta seguindo agora");
+    setFollowText[1]("Following");
+  }
+
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
       <Title>
         <span>{props.name}</span>
         <button className={styles.followButton} onClick={handleClick}>
-          {followButtonText}
+          {followText}
         </button>
       </Title>
       <CardSection>{props.bio}</CardSection>
