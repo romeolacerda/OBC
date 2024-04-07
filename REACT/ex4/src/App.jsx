@@ -5,6 +5,7 @@ function App() {
   const [password, setPassword] = useState("");
   const [copyText, setCopyText] = useState("Copiar");
   const [passwordSize, setPasswordSize] = useState(12);
+  const [showInput, setShowInput] = useState(false);
 
   function generate() {
     const characters =
@@ -26,6 +27,16 @@ function App() {
   return (
     <div className="app">
       <h1>Gerador de senhas</h1>
+      <div>
+        <label htmlFor="showInput">Customizar o tamanho:</label>
+        <input
+          type="checkbox"
+          id="showInput"
+          value={showInput}
+          onChange={() => setShowInput((currentState) => !currentState)}
+        />
+        a
+      </div>
       <div>
         <label htmlFor="passwordSize">Tamanho:</label>
         <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
