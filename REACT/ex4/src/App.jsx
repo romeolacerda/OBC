@@ -4,8 +4,10 @@ import Input from "./components/input";
 function App() {
   const [password, setPassword] = useState("");
   const [copyText, setCopyText] = useState("Copiar");
-  const [passwordSize, setPasswordSize] = useState(12);
+  const [customSize, setCustomSize] = useState(12);
   const [showInput, setShowInput] = useState(false);
+
+  const passwordSize = showInput ? customSize : 8;
 
   function generate() {
     const characters =
@@ -35,12 +37,14 @@ function App() {
           value={showInput}
           onChange={() => setShowInput((currentState) => !currentState)}
         />
-        a
       </div>
-      <div>
-        <label htmlFor="passwordSize">Tamanho:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
-      </div>
+      {showInput ? (
+        <div>
+          <label htmlFor="passwordSize">Tamanho:</label>
+          <Input passwordSize={customSize} setPasswordSize={setCustomSize} />
+        </div>
+      ) : null}
+
       <button onClick={generate}>
         Gerar senha de {passwordSize} caracteres!
       </button>
