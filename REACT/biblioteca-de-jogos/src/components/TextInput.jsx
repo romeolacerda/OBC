@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 TextInput.propTypes = {
   value: PropTypes.string,
-  setValue: PropTypes.string,
+  setValue: PropTypes.func,
   label: PropTypes.string,
   id: PropTypes.string,
 };
@@ -15,8 +15,8 @@ export default function TextInput({ id, label, value, setValue }) {
         type="text"
         name={id}
         id={id}
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
     </div>
   );
