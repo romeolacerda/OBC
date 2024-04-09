@@ -1,14 +1,13 @@
-import { useState } from "react";
+async function fetchPokemon() {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon");
+  const data = await response.json();
+  return data.results;
+}
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
-
   return (
-    <>
-      <h1>Conhecendo o use effect</h1>
-      <button onClick={() => setCounter((count) => count + 1)}>
-        Contador: {counter}
-      </button>
-    </>
+    <div className="app">
+      <div>Pokemon</div>
+    </div>
   );
 }
