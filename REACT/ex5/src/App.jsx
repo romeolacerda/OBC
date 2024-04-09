@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [author, setAuthour] = useState("");
+  const [content, setContent] = useState("");
+  const [comments, setComments] = useState([]);
 
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+
+    const newComment = {
+      id: Math.floor(Math.random() * 1000000),
+      author: author,
+      content: content,
+      createdAt: new Date(),
+    };
+
+    setComments((state) => [newComment, ...state]);
+    setAuthour("");
+    setContent("");
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div id="app">
+      <h2>Secção de Comentarios</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="author">Email</label>
+        <input
+          type="email"
+          id="author"
+          required
+          value={author}
+          onChange={(ev) => setAuthour(ev.target.value)}
+        />
+        <label htmlFor="content">Comentário</label>
+        <textarea
+          id="content"
+          cols="30"
+          rows="10"
+          required
+          value={content}
+          onChange={(ev) => setContent(ev.target.value)}
+        ></textarea>
+        <button type="submit">Enviar Comentario</button>
+      </form>
+      <hr />
+      <section id="comments">
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <div key={comment.id}>
+              <h3>{comment.author}</h3>
+              <span>Em {comment.createdAt.toLocaleString()}</span>
+              <p>{comment.content}</p>
+            </div>
+          ))
+        ) : (
+          <p>Seja o primeiro a comentar</p>
+        )}
+      </section>
+    </div>
+  );
 }
-
-export default App
