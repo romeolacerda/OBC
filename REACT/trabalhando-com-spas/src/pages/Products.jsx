@@ -1,4 +1,5 @@
 import products from "../database.json";
+import Header from "../Components/Header";
 
 export default function Products() {
   return (

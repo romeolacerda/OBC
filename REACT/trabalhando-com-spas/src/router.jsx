@@ -1,21 +1,29 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./Components/Home";
-import Products from "./Components/Products";
-import Cart from "./Components/Cart";
-import AdminHome from "./Components/Admin";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import AdminHome from "./pages/admin/Admin";
+import RootLayout from "./pages/RootLayout";
+import { element } from "prop-types";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/products",
-    element: <Products />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
   },
   {
     path: "/admin",
